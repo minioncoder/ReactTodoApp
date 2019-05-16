@@ -9,25 +9,21 @@ class Todos extends Component {
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.state = { show: false };
+        this.state = { isHidden: true };
     }
     openModal = () => {
-        this.setState(() => ({ show: true }));
+        this.setState({ isHidden: !this.state.isHidden });
     }
-    closeModal = () => {
-        this.setState(() => ({ show: false }));
+    closeModal = () => { 
+        this.setState({ isHidden: true });
     }
 
     render() {
-        console.log(this.state.show);
         return (
             <div>
-                <div show="false">
-                    <Button color="primary">Hello</Button>
-                </div>
                 <Button color="primary" size="lg" active onClick={this.openModal}>+</Button>
-                <div show={this.state.show}>
-                    <Modal size="sm" onClose={this.closeModal}>
+                    {!this.state.isHidden && 
+                        (<Modal size="sm" onClose={this.closeModal}>
                         <Modal.Header>
                             <Modal.Title>
                                 Modal Title
@@ -37,11 +33,11 @@ class Todos extends Component {
                             Modal Body
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button color="primary" onClick={() => this.setState({ show: false })}> Save </Button>
-                            <Button color="secondary" onClick={() => this.setState({ show: false })}> Close </Button>
+                            <Button color="primary" onClick={this.closeModal}> Save </Button>
+                            <Button color="secondary" onClick={this.closeModal}> Close </Button>
                         </Modal.Footer>
-                    </Modal>
-                </div>
+                    </Modal>)
+                    }
                 <Container>
                     <Row>
                         <Col sm="4">
