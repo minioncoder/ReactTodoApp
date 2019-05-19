@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Card, CardTitle, Row, Col, CardText, Button } from 'reactstrap';
 import './main.css';
-import Modal from '../components/Modal';
+import Modal from '../components/ModalWrapper';
 
 class Todos extends Component {
     constructor(props) {
@@ -23,20 +23,7 @@ class Todos extends Component {
             <div>
                 <Button color="primary" size="lg" active onClick={this.openModal}>+</Button>
                     {!this.state.isHidden && 
-                        (<Modal size="sm" onClose={this.closeModal}>
-                        <Modal.Header>
-                            <Modal.Title>
-                                Modal Title
-                        </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body padding>
-                            Modal Body
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button color="primary" onClick={this.closeModal}> Save </Button>
-                            <Button color="secondary" onClick={this.closeModal}> Close </Button>
-                        </Modal.Footer>
-                    </Modal>)
+                        (<Modal size="sm" closeModal={this.closeModal}></Modal>)
                     }
                 <Container>
                     <Row>
