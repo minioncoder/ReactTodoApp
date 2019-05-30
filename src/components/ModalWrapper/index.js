@@ -10,7 +10,8 @@ export default ({ size = 'sm', closeModal }) => {
             </Modal.Title>
         </Modal.Header>
         <Modal.Body padding>
-            <textarea className='form-control' style={{ minWidth: 100, minHeight: 100 }}>Task Description here</textarea>
+            <text className='form-control' style={{minWidth: 50, minHeight: 20, padding: 10}}>Subject</text>
+            <textarea className='form-control' style={{ minWidth: 100, minHeight: 100, paddingTop: 40 }}>Task Description here</textarea>
         </Modal.Body>
         <Modal.Footer>
             <Button color="primary" onClick={closeModal}> Save </Button>

@@ -36,11 +36,6 @@ class Todos extends Component {
                                 <CardText>PowerBill have to be paid by Month end</CardText>
                                 <Button color="primary">Go Inprogress</Button>
                             </Card>
-                            <Card body>
-                                <CardTitle>Chores</CardTitle>
-                                <CardText>PowerBill have to be paid by Month end</CardText>
-                                <Button color="primary">Go Inprogress</Button>
-                            </Card>
                         </Col>
                         <Col sm="4">
                             <div className="headerClass"><h3>IN PROGRESS</h3></div>
